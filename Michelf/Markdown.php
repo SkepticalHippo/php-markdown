@@ -964,7 +964,6 @@ class Markdown implements MarkdownInterface {
 		$codeblock = $matches[1];
 
 		$codeblock = $this->outdent($codeblock);
-		$codeblock = htmlspecialchars($codeblock, ENT_NOQUOTES);
 
 		# trim leading newlines and trailing newlines
 		$codeblock = preg_replace('/\A\n+|\n+\z/', '', $codeblock);
@@ -978,7 +977,7 @@ class Markdown implements MarkdownInterface {
 	#
 	# Create a code span markup for $code. Called from handleSpanToken.
 	#
-		$code = htmlspecialchars(trim($code), ENT_NOQUOTES);
+		$code = trim($code);
 		return $this->hashPart("<code>$code</code>");
 	}
 
