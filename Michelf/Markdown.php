@@ -2640,7 +2640,7 @@ abstract class _MarkdownExtra_TmpImpl extends \Michelf\Markdown {
 			
 			$text .= "<tr>\n";
 			foreach ($row_cells as $n => $cell)
-				$text .= "  <td$attr[$n]>".$this->runSpanGamut(trim($cell))."</td>\n";
+				$text .= "  <td$attr[$n] data-label=\"".$this->runSpanGamut(trim($headers[$n]))."\">".$this->runSpanGamut(trim($cell))."</td>\n";
 			$text .= "</tr>\n";
 		}
 		$text .= "</tbody>\n";
